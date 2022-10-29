@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Converter</title>
+</head>
+<body>
+    <h1>Unit Converter</h1>
+    <div id="container">
+        <input type="text" id="input" placeholder="Enter length value">
+        <button id="meter">Convert to meter</button><button id="feet">Convert to feet</button>
+        <input type="text" id="output">
+    </div>
+    <div id="container">
+        <input type="text" id="tinput" placeholder="Enter temperature value">
+        <button id="celsius">Convert to celsius</button><button id="fahrenheit">Convert to fahrenheit</button>
+        <input type="text" id="toutput">
+    </div>
+    <a href="index.html">Back to main menu</a>
+    <script>
+        let meterbtn = document.getElementById('meter');
+        let feetbtn = document.getElementById('feet');
+        let cbtn = document.getElementById('celsius');
+        let fbtn = document.getElementById('fahrenheit');
+        //m to ft
+        meterbtn.addEventListener('click', function () {
+            let input = document.getElementById('input').value;
+            document.getElementById('output').value = input / 3.281 + "m";
+        })
+        //
+        feetbtn.addEventListener('click', function () {
+            let input = document.getElementById('input').value;
+            document.getElementById('output').value = input * 3.281 + "ft";
+
+        })
+        //c to f
+        cbtn.addEventListener('click', function () {
+            let input = document.getElementById('tinput').value;
+            document.getElementById('toutput').value = input * 9 / 5 + 32 + "c";
+        })
+        //f to c
+        fbtn.addEventListener('click', function () {
+            let input = document.getElementById('tinput').value;
+            document.getElementById('toutput').value = input - 32 * 5 / 9 + "f";
+        })
+        
+    </script>
+</body>
+</html>
