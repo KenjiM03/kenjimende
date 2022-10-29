@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h1>Assignment #3 </h1>
+    <div id="container">
+        <h2>Find Factorial</h2>
+        <input type="text" id="num" />
+        <input type="button" value="Factorial" onclick="factorial()" />
+
+
+        <div id="answer"></div>
+    </div>
+    <div>
+        <h2>Sum of the first N numbers</h2>
+        <label for="input-value">Input the Value of N: </label>
+        <input type="number" id="input-value" />
+        <button id="convert-button">Compute</button>
+    </div>
+    <h3>The Sum of the first N numbers is:</h3>
+    <div><input type="text" id="output-value" readonly /></div>
+    <h2>Compute the Average of First N Natural Numbers</h2>
+    <div>
+        <label for="a-input-value">Input the Value of N </label>
+        <input type="number" id="a-input-value" />
+        <button id="a-convert-button">Compute</button>
+    </div>
+    <h3>The Average of the First N Natural Numbers is:</h3>
+    <div><input type="text" id="a-output-value" readonly /></div>
+    <div></div>
+        <a href="index.html">Back to main menu</a>
+
+
+
+    <script>
+        const factorial = () => {
+
+            var num = document.getElementById("num").value;
+            var fact = 1, i = 1;
+
+            while (i <= num) { fact = fact * i; i++; } document.getElementById("answer").innerHTML = fact;
+        }
+        const inputValue = document.getElementById('input-value')
+        const outputValue = document.getElementById('output-value')
+        const btnConvert = document.getElementById('convert-button')
+
+        btnConvert.addEventListener('click', () => {
+            const Number = parseInt(inputValue.value)
+            let count = 1
+            let previousNum = 1
+            do {
+                count++
+                previousNum += count
+            } while (count < Number)
+            {
+                outputValue.value = previousNum
+            }
+        })
+        const inputValuea = document.getElementById('a-input-value')
+        const outputValuea = document.getElementById('a-output-value')
+        const btnConverta = document.getElementById('a-convert-button')
+
+        btnConverta.addEventListener('click', () => {
+            const Number = parseInt(inputValuea.value)
+            sum = 1
+            for (let i = 1; i <= Number; i++) {
+                if (i === Number) {
+                    sum = (sum + i) / Number
+                } else {
+                    sum += i
+                }
+            }
+            outputValuea.value = sum
+        })
+    </script>
+</body>
+</html>
